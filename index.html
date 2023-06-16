@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISTEN_IT</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .container{
+            height: 100vh;
+            width: 100%;
+            background-image: url(img/image.png);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .navbar{
+            width: 88%;
+            margin: auto;
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo{
+            width: 140px;
+            cursor: pointer;
+        }
+
+        .navbar ul li{
+            list-style: none;
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .navbar ul li a{
+            text-decoration: none;
+            color: #5f5f5f;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .content{
+            width: 100%;
+            position: absolute;
+            top: 30%;
+        }
+
+        .leftcol{
+            margin-left: 6%;
+        }
+
+        .leftcol h1{
+            font-size: 90px;
+            color: #fff;
+            line-height: 110px;
+            float: left;
+        }
+
+        .rightcol{
+            float: right;
+            margin-right: 6%;
+            margin-top: 120px;
+            display: flex;
+            align-items: center;
+        }
+
+        .rightcol p{
+            font-size: 18px;
+            color: #5f5f5f;
+            font-weight: 400;
+            margin-right: 15px;
+
+        }
+
+        #icon{
+            width: 80px;
+            cursor: pointer;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <img src="img/logo.png" class="logo">
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">SPECIFICATION</a></li>
+                <li><a href="">PRODUCTS</a></li>
+                <li><a href="">CONNECT</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="leftcol">
+                <h1>THE <br>REAL <br>SOUND</h1>
+
+            </div>
+            <div class="rightcol">
+                <p>Click Here To Listen</p>
+                <img src="img/play.png" id="icon">
+            </div>
+        </div>
+
+    </div>
+
+    <audio id="mysong">
+        <source src="img/song.mp3.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        var mysong = document.getElementById("mysong");
+        var icon = document.getElementById("icon");
+
+        icon.onclick = function(){
+            if(mysong.paused){
+                mysong.play();
+                icon.src = "img/pause.png";
+            }
+            else{
+                mysong.pause();
+                icon.src = "img/play.png";
+            }
+            
+        }
+    </script>
+
+    
+</body>
+</html>
